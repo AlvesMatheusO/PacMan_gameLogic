@@ -17,40 +17,6 @@ export default class Pacman {
         ];
     }
 
-    // bfs(start, end) {
-    //     let queue = [[start]];
-    //     let visited = Array.from({
-    //         length: this.maze.length  
-    //     }, () => Array(this.maze[0].length).fill(false));  
-        
-    //     visited[start[0]] [start[1]] = true;
-
-    //     while(queue.length > 0) {
-    //         let path = queue.shift();
-    //         let [x, y] = path[path.length - 1];
-
-    //         if (x === end[0] && y === end[1]) {
-    //             return path;
-    //         }
-
-    //         for (let [dx, dy] of this.directions) {
-    //             let newX = x + dx;
-    //             let newY = y + dy;
-
-    //             if (
-    //                 newX >= 0 && newX < this.maze.rows &&
-    //                 newY >= 0 && newY < this.maze.cols &&
-    //                 this.maze.isWalkable(newX, newY) &&
-    //                 !visited[newX][newY]
-    //              ) {
-    //                 visited[newX][newY] = true;
-    //                 queue.push([...path, [newX, newY]]);
-    //              }
-    //         }
-    //     }
-    //     return null;
-    // }
-
     moveGhosts() {
         this.ghosts.forEach(ghost => {
             let path = ghost.chase(this.players[0], this.maze);
@@ -72,7 +38,6 @@ export default class Pacman {
         });
     }
     
-
     simulateGame(rounds) {
         for (let i = 0; i < rounds; i++) {
             this.moveGhosts();

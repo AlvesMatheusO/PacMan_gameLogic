@@ -8,6 +8,7 @@ export default class Ghost {
       this.position = newPosition;
     }
   
+    
     // Método para o fantasma perseguir o Pac-Man usando BFS
     chase(player, maze) {
         console.log(`${this.name} está perseguindo ${player.name} da posição ${this.position}`);

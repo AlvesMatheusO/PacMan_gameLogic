@@ -63,6 +63,3 @@ while (!caught) {
 
   round++;
 }
-const game = new Pacman(maze, [player], [ghost]);
-
-game.simulateGame(5);
