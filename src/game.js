@@ -17,8 +17,6 @@ export default class Pacman {
         ];
     }
 
-<<<<<<< HEAD
-=======
     // bfs(start, end) {
     //     let queue = [[start]];
     //     let visited = Array.from({
@@ -53,7 +51,6 @@ export default class Pacman {
     //     return null;
     // }
 
->>>>>>> 0957621 (options and table)
     moveGhosts() {
         this.ghosts.forEach(ghost => {
             let path = ghost.chase(this.players[0], this.maze);
@@ -74,12 +71,9 @@ export default class Pacman {
             }
         });
     }
-<<<<<<< HEAD
-    
-=======
 
 
->>>>>>> 0957621 (options and table)
+
     simulateGame(rounds) {
         for (let i = 0; i < rounds; i++) {
             this.moveGhosts();
