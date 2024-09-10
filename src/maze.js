@@ -1,5 +1,4 @@
 export default class Maze {
-    
     // construcao do labirinto: Utilizamos a grid para representar o 
     // labirinto(Interssesao de linhas horizontais e conjunto de linhas verticais)
     constructor(grid) {
