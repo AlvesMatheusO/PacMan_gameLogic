@@ -15,11 +15,10 @@ export default class MazeGenerator {
         let startX = Math.floor(Math.random() * this.rows);
         let startY = Math.floor(Math.random() * this.cols);
 
-        // Garantir que startX e startY sejam ímpares para começarmos dentro do labirinto
         if (startX % 2 === 0) startX += 1;
         if (startY % 2 === 0) startY += 1;
 
-        this.maze[startX][startY] = 0;  // Marca o ponto inicial
+        this.maze[startX][startY] = 0; 
         this.dfs(startX, startY);
 
         return this.maze;
@@ -35,17 +34,15 @@ export default class MazeGenerator {
 
             // Verificar se o novo ponto está dentro do labirinto e se é uma parede
             if (nx > 0 && ny > 0 && nx < this.rows - 1 && ny < this.cols - 1 && this.maze[nx][ny] === 1) {
-                // Abrir o caminho entre x, y e nx, ny
+                
                 this.maze[x + dx / 2][y + dy / 2] = 0;
                 this.maze[nx][ny] = 0;
 
-                // Continuar o DFS a partir da nova célula
                 this.dfs(nx, ny);
             }
         }
     }
 
-    // Função auxiliar para embaralhar as direções
     shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
