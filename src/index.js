@@ -1,16 +1,17 @@
-import Maze from "./maze.js";
+
 import Player from "./player.js";
 import Ghost from "./ghost.js";
 import Pacman from "./game.js";
+import Maze from "./maze.js";
+import MazeGenerator from "./MazeGenerator.js"
 
-const maze = [
-    [0, 1, 0, 0],
-    [0, 1, 0, 1],
-    [0, 0, 0, 1],
-    [1, 1, 0, 0],
-  ];
-const ghostPosition = [0, 0];  // Posição inicial do fantasma
-const pacmanPosition = [3, 3];  // Posição inicial do Pac-Man
+// Exemplo de uso
+let mazeGenerator = new MazeGenerator(11, 11);  
+let maze = mazeGenerator.generate();
+console.log(maze);
+
+const ghostPosition = [1, 1];  // Posição inicial do fantasma
+const pacmanPosition = [3,5];  // Posição inicial do Pac-Man
 
 const player = new Player('Pacman', pacmanPosition);
 const ghost = new Ghost('Fantasma vermelho', ghostPosition);

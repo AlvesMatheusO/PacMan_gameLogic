@@ -12,3 +12,6 @@ export default class Maze {
         return this.grid[x] [y] === 0;
     }
 }
+
+
+
